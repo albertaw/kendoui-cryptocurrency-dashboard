@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Crypto Dashboard</title>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.3.1017/styles/kendo.common-material.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.3.1017/styles/kendo.material.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2018.3.1017/js/kendo.all.min.js"></script>
+    <style>
+      body { font-family: 'helvetica'; }
+    </style>
+  </head>
+  <body>
+    <div id="splitter">
+      <div id="left-pane">
+        <div id="tabs"></div>
+      </div>
+      <div id="right-pane">
+        <h3>Trade Pair Name</h3>
+        <input id="picker" />
+        <div id="button-group"></div>
+      <div>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function(){
+    	$('#splitter').kendoSplitter({
+      	panes: [{size: '40%', collapsible: true}, {collapsible: true}]
+      });
+      $('#tabs').kendoTabStrip({
+        value: 'BTC',
+        dataTextField: 'label',
+        dataContentField: 'content',
+        dataSource: [
+          {label: 'BTC', content: '<h4>BTC Grid</h4>'},
+          {label: 'USDT', content: '<h4>USDT Grid</h4>'},
+          {label: 'LTC', content: '<h4>LTC Grid</h4>'}
+        ]
+      });
+      $('#picker').kendoDateTimePicker({
+      	dateInput: true,
+        format: 'MM/dd/yyyy h tt',
+        timeFormat: 'h:mm tt',
+        interval: 60
+      });
+      $('#button-group').kendoButtonGroup({
+      	items: [
+          {text: '1d'},
+          {text: '1w'},
+          {text: '1m'},
+          {text: '3m'}
+        ]
+      });
+    });
+  </script>
+</html>
