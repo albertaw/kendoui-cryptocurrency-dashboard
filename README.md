@@ -1,4 +1,4 @@
-## Build a Cryptocurrency Dashboard with Kendo UI
+# Build a Cryptocurrency Dashboard with Kendo UI
 
 A six part series showing you how to build an app using the Kendo UI 
 components for jQuery. 
