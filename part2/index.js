@@ -2,6 +2,7 @@ $(document).ready(function(){
 	$('#splitter').kendoSplitter({
   	panes: [{size: '40%', collapsible: true}, {collapsible: true}]
   });
+  
   $('#tabs').kendoTabStrip({
     value: 'BTC',
     dataTextField: 'label',
@@ -12,12 +13,14 @@ $(document).ready(function(){
       {label: 'LTC', content: '<h4>LTC Grid</h4>'}
     ]
   });
+  
   $('#picker').kendoDateTimePicker({
   	dateInput: true,
     format: 'MM/dd/yyyy h tt',
     timeFormat: 'h:mm tt',
     interval: 60
   });
+  
   $('#button-group').kendoButtonGroup({
   	items: [
       {text: '1d'},
